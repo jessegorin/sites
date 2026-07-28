@@ -1,0 +1,967 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>Google Search Ads — What They Do for Your Restaurant | Chowly</title>
+<meta name="description" content="How Google Search Ads put your restaurant in front of diners on Google Search and Maps, and send them to your own ordering page instead of a marketplace.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Google Search Ads — What They Do for Your Restaurant">
+<meta property="og:description" content="Get found while diners are still deciding. How Chowly builds, runs, and measures Google Search Ads for restaurants.">
+<style>
+  *, *::before, *::after { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  img { max-width: 100%; display: block; }
+</style>
+
+<style>
+  :root {
+    --navy:            #001f52;
+    --navy-deep:       #020817;
+    --navy-mid:        #0c2d6b;
+    --heading-navy:    #0a2540;
+    --brand-blue:      #1B51A4;
+    --accent-blue:     #3B82F6;
+    --accent-cyan:     #06B6D4;
+    --sky:             #38bdf8;
+    --yellow:          #F9E11C;
+    --yellow-dark:     #FFD600;
+
+    --text-primary:    #0a1628;
+    --text-body:       #3b4563;
+    --text-muted:      #6b7a99;
+    --text-subtle:     #8b95ad;
+
+    --surface:         #ffffff;
+    --surface-raised:  #f8f9fc;
+    --surface-cool:    #f0f3fa;
+    --border:          #e2e8f0;
+    --border-subtle:   #eef2f7;
+
+    --page-bg:         linear-gradient(180deg, #ffffff 0%, #f8f9fc 30%, #f0f3fa 68%, #ffffff 100%);
+
+    --font-heading: Lato, "Lato Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+    --font-body: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, system-ui, sans-serif;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --text-primary:   #f2f6ff;
+      --text-body:      #c3cfe6;
+      --text-muted:     #93a3c2;
+      --text-subtle:    #7285a8;
+      --heading-navy:   #eaf1ff;
+      --brand-blue:     #7fb0ff;
+      --accent-blue:    #7fb0ff;
+      --surface:        #0a1428;
+      --surface-raised: #0d1a33;
+      --surface-cool:   #101f3c;
+      --border:         #1e3157;
+      --border-subtle:  #182848;
+      --page-bg:        linear-gradient(180deg, #050b18 0%, #0a1428 35%, #0c1a33 70%, #050b18 100%);
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --text-primary:   #f2f6ff;
+    --text-body:      #c3cfe6;
+    --text-muted:     #93a3c2;
+    --text-subtle:    #7285a8;
+    --heading-navy:   #eaf1ff;
+    --brand-blue:     #7fb0ff;
+    --accent-blue:    #7fb0ff;
+    --surface:        #0a1428;
+    --surface-raised: #0d1a33;
+    --surface-cool:   #101f3c;
+    --border:         #1e3157;
+    --border-subtle:  #182848;
+    --page-bg:        linear-gradient(180deg, #050b18 0%, #0a1428 35%, #0c1a33 70%, #050b18 100%);
+  }
+
+  :root[data-theme="light"] {
+    --text-primary:   #0a1628;
+    --text-body:      #3b4563;
+    --text-muted:     #6b7a99;
+    --text-subtle:    #8b95ad;
+    --heading-navy:   #0a2540;
+    --brand-blue:     #1B51A4;
+    --accent-blue:    #3B82F6;
+    --surface:        #ffffff;
+    --surface-raised: #f8f9fc;
+    --surface-cool:   #f0f3fa;
+    --border:         #e2e8f0;
+    --border-subtle:  #eef2f7;
+    --page-bg:        linear-gradient(180deg, #ffffff 0%, #f8f9fc 30%, #f0f3fa 68%, #ffffff 100%);
+  }
+
+  .page {
+    font-family: var(--font-body);
+    color: var(--text-body);
+    background: var(--page-bg);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .page h1, .page h2, .page h3, .page h4 {
+    font-family: var(--font-heading);
+    color: var(--heading-navy);
+    text-wrap: balance;
+    margin: 0;
+  }
+
+  .page p { margin: 0; }
+
+  .wrap {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding-inline: 28px;
+  }
+
+  .eyebrow {
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.6px;
+    text-transform: uppercase;
+    color: var(--accent-blue);
+    margin: 0;
+  }
+
+  /* ---------- HERO ---------- */
+
+  .hero {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(165deg, #020817 0%, #001131 34%, #001f52 66%, #0c2d6b 100%);
+    padding: 68px 0 76px;
+    isolation: isolate;
+  }
+
+  .hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    opacity: 0.035;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.9) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.9) 1px, transparent 1px);
+    background-size: 58px 58px;
+    z-index: -1;
+  }
+
+  .hero::after {
+    content: "";
+    position: absolute;
+    width: 620px;
+    height: 620px;
+    right: -160px;
+    top: -220px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(59,130,246,0.20) 0%, transparent 70%);
+    filter: blur(60px);
+    z-index: -1;
+  }
+
+  .hero-grid {
+    display: flex;
+    align-items: center;
+    gap: 52px;
+  }
+
+  .hero-copy { flex: 1.25; min-width: 0; }
+  .hero-visual { flex: 1; min-width: 0; }
+
+  .hero .eyebrow { color: var(--sky); }
+
+  .hero h1 {
+    font-size: 3.15rem;
+    font-weight: 900;
+    line-height: 1.06;
+    letter-spacing: -0.02em;
+    color: #ffffff;
+    margin: 16px 0 20px;
+  }
+
+  .hero-lede {
+    font-size: 1.08rem;
+    color: rgba(255,255,255,0.72);
+    max-width: 46ch;
+    line-height: 1.65;
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    margin-top: 26px;
+    padding: 9px 16px;
+    border-radius: 999px;
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.12);
+    backdrop-filter: blur(12px);
+    font-size: 13.5px;
+    font-weight: 500;
+    color: rgba(255,255,255,0.85);
+  }
+
+  .hero-badge .dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #4ade80;
+    box-shadow: 0 0 0 3px rgba(74,222,128,0.18);
+  }
+
+  /* mock sponsored maps result */
+
+  .adcard {
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.34);
+    overflow: hidden;
+    max-width: 400px;
+    margin-left: auto;
+  }
+
+  .adcard-map {
+    height: 104px;
+    position: relative;
+    background:
+      radial-gradient(circle at 62% 44%, rgba(27,81,164,0.16) 0%, transparent 46%),
+      linear-gradient(135deg, #e8eef7 0%, #dfe7f3 100%);
+  }
+
+  .adcard-map .road {
+    position: absolute;
+    background: rgba(255,255,255,0.9);
+  }
+  .adcard-map .road.h1 { left: 0; right: 0; top: 38px; height: 7px; }
+  .adcard-map .road.h2 { left: 0; right: 0; top: 78px; height: 4px; }
+  .adcard-map .road.v1 { top: 0; bottom: 0; left: 104px; width: 6px; }
+  .adcard-map .road.v2 { top: 0; bottom: 0; left: 248px; width: 4px; }
+
+  .adcard-map .pin {
+    position: absolute;
+    left: 158px;
+    top: 34px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50% 50% 50% 0;
+    transform: rotate(-45deg);
+    background: linear-gradient(135deg, #1B51A4, #3B82F6);
+    box-shadow: 0 4px 14px rgba(27,81,164,0.45);
+  }
+  .adcard-map .pin::after {
+    content: "";
+    position: absolute;
+    inset: 6px;
+    border-radius: 50%;
+    background: #ffffff;
+  }
+
+  .adcard-body { padding: 16px 18px 18px; }
+
+  .adcard-tag {
+    display: inline-block;
+    font-size: 10.5px;
+    font-weight: 800;
+    letter-spacing: 0.9px;
+    text-transform: uppercase;
+    color: #1a5c2a;
+    background: #e7f5ea;
+    padding: 3px 8px;
+    border-radius: 4px;
+  }
+
+  .adcard-name {
+    font-family: var(--font-heading);
+    font-size: 1.08rem;
+    font-weight: 700;
+    color: #0a2540;
+    margin: 9px 0 4px;
+  }
+
+  .adcard-meta {
+    font-size: 12.5px;
+    color: #5a6b8a;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+
+  .adcard-stars { color: #f2a900; letter-spacing: 1px; }
+
+  .adcard-actions {
+    display: flex;
+    gap: 8px;
+    margin-top: 14px;
+  }
+
+  .adcard-btn {
+    flex: 1;
+    text-align: center;
+    font-size: 11.5px;
+    font-weight: 600;
+    padding: 8px 4px;
+    border-radius: 999px;
+    border: 1px solid #d5dfee;
+    color: #1B51A4;
+    background: #ffffff;
+  }
+
+  .adcard-btn.filled {
+    background: #1B51A4;
+    border-color: #1B51A4;
+    color: #ffffff;
+  }
+
+  .adcard-caption {
+    margin-top: 14px;
+    font-size: 12px;
+    line-height: 1.5;
+    color: rgba(255,255,255,0.5);
+    text-align: right;
+    max-width: 400px;
+    margin-left: auto;
+  }
+
+  /* ---------- STAT BAND ---------- */
+
+  .statband {
+    background: linear-gradient(180deg, var(--surface) 0%, var(--surface-raised) 100%);
+    border-bottom: 1px solid var(--border-subtle);
+    padding: 40px 0 44px;
+  }
+
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 26px;
+  }
+
+  .stat {
+    padding-left: 16px;
+    border-left: 3px solid var(--accent-blue);
+  }
+
+  .stat:nth-child(2) { border-left-color: var(--brand-blue); }
+  .stat:nth-child(3) { border-left-color: var(--accent-cyan); }
+  .stat:nth-child(4) { border-left-color: var(--navy); }
+
+  .stat-value {
+    font-family: var(--font-heading);
+    font-size: 2.1rem;
+    font-weight: 900;
+    line-height: 1.05;
+    color: var(--heading-navy);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .stat-label {
+    font-size: 13.5px;
+    color: var(--text-muted);
+    margin-top: 7px;
+    line-height: 1.45;
+  }
+
+  /* ---------- SECTIONS ---------- */
+
+  .section { padding: 62px 0; }
+  .section-tight { padding: 48px 0; }
+
+  .section-head {
+    text-align: center;
+    max-width: 620px;
+    margin: 0 auto 38px;
+  }
+
+  .section-head h2 {
+    font-size: 2.35rem;
+    font-weight: 700;
+    line-height: 1.16;
+    margin: 13px 0 12px;
+  }
+
+  .section-head p {
+    font-size: 1.04rem;
+    color: var(--text-muted);
+  }
+
+  .benefits {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+  }
+
+  .bcard {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 26px 26px 28px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .bcard::before {
+    content: "";
+    position: absolute;
+    inset: 0 0 auto 0;
+    height: 3px;
+    background: linear-gradient(135deg, #1B51A4, #3B82F6, #06B6D4);
+  }
+
+  .bcard h3 {
+    font-size: 1.22rem;
+    font-weight: 700;
+    margin-bottom: 9px;
+  }
+
+  .bcard p {
+    font-size: 14.5px;
+    color: var(--text-muted);
+    line-height: 1.62;
+  }
+
+  .bcard .kicker {
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+    color: var(--brand-blue);
+    display: block;
+    margin-bottom: 11px;
+  }
+
+  /* ---------- BUILD STRIP ---------- */
+
+  .buildstrip {
+    background: linear-gradient(180deg, #001f52 0%, #002a6b 52%, #001f52 100%);
+    padding: 58px 0 62px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .buildstrip::after {
+    content: "";
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    left: -140px;
+    bottom: -240px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(6,182,212,0.13) 0%, transparent 70%);
+    filter: blur(60px);
+  }
+
+  .buildstrip .inner { position: relative; z-index: 1; }
+
+  .buildstrip h2 {
+    color: #ffffff;
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .buildstrip .sub {
+    text-align: center;
+    color: #b4c6e0;
+    font-size: 1rem;
+    max-width: 600px;
+    margin: 0 auto 36px;
+  }
+
+  .buildgrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+  }
+
+  .bitem {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 12px;
+    padding: 20px 20px 22px;
+    backdrop-filter: blur(10px);
+  }
+
+  .bitem h4 {
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+
+  .bitem p {
+    font-size: 13.5px;
+    color: #b4c6e0;
+    line-height: 1.55;
+  }
+
+  /* ---------- SPLIT ---------- */
+
+  .split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px;
+  }
+
+  .panel {
+    border-radius: 16px;
+    padding: 28px 28px 30px;
+    border: 1px solid var(--border);
+    background: var(--surface);
+  }
+
+  .panel.accent {
+    background: linear-gradient(160deg, var(--surface-cool) 0%, var(--surface-raised) 100%);
+    border-color: var(--border);
+  }
+
+  .panel h3 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+
+  .panel .who {
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+    color: var(--brand-blue);
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  .checks {
+    list-style: none;
+    padding: 0;
+    margin: 18px 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+  }
+
+  .checks li {
+    display: flex;
+    gap: 11px;
+    font-size: 14.5px;
+    color: var(--text-body);
+    line-height: 1.5;
+  }
+
+  .checks li::before {
+    content: "";
+    flex: none;
+    width: 16px;
+    height: 16px;
+    margin-top: 4px;
+    border-radius: 50%;
+    background: var(--brand-blue);
+    -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path d='M6.4 11.8 3 8.4l1.2-1.2 2.2 2.2 5.4-5.4L13 5.2z'/></svg>") center / 16px no-repeat;
+    mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path d='M6.4 11.8 3 8.4l1.2-1.2 2.2 2.2 5.4-5.4L13 5.2z'/></svg>") center / 16px no-repeat;
+  }
+
+  /* ---------- BUDGET ---------- */
+
+  .budget {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 30px;
+    align-items: start;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 34px 34px 36px;
+  }
+
+  .budget-figure {
+    border-right: 1px solid var(--border-subtle);
+    padding-right: 30px;
+  }
+
+  .budget-amount {
+    font-family: var(--font-heading);
+    font-size: 3.4rem;
+    font-weight: 900;
+    line-height: 1;
+    color: var(--heading-navy);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .budget-amount span {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    display: block;
+    margin-top: 8px;
+    letter-spacing: 0.2px;
+  }
+
+  .budget-note {
+    font-size: 14px;
+    color: var(--text-muted);
+    margin-top: 16px;
+    line-height: 1.6;
+  }
+
+  .budget h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+
+  .budget-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+  }
+
+  .budget-list li {
+    font-size: 14.5px;
+    color: var(--text-body);
+    line-height: 1.55;
+    padding-left: 16px;
+    border-left: 2px solid var(--border);
+  }
+
+  .budget-list li strong {
+    color: var(--heading-navy);
+    font-weight: 700;
+  }
+
+  /* ---------- CTA ---------- */
+
+  .cta {
+    background: linear-gradient(135deg, #001f52 0%, #0c2d6b 50%, #001f52 100%);
+    padding: 54px 0 58px;
+    text-align: center;
+  }
+
+  .cta h2 {
+    color: #ffffff;
+    font-size: 1.95rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+
+  .cta p {
+    color: #b4c6e0;
+    font-size: 1rem;
+    max-width: 620px;
+    margin: 0 auto 26px;
+  }
+
+  .cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    background: linear-gradient(135deg, #F9E11C 0%, #FFD600 100%);
+    color: #0a1628;
+    font-family: var(--font-body);
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    padding: 15px 30px;
+    border-radius: 12px;
+    border: none;
+    text-decoration: none;
+    transition: transform 200ms ease, box-shadow 200ms ease;
+  }
+
+  .cta-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(249,225,28,0.35);
+  }
+
+  .cta-btn:focus-visible {
+    outline: 3px solid #ffffff;
+    outline-offset: 3px;
+  }
+
+  .footnote {
+    padding: 26px 0 40px;
+    font-size: 12px;
+    color: var(--text-subtle);
+    line-height: 1.6;
+    text-align: center;
+  }
+
+  /* ---------- RESPONSIVE ---------- */
+
+  @media (max-width: 1000px) {
+    .stats { grid-template-columns: repeat(2, 1fr); }
+    .buildgrid { grid-template-columns: repeat(2, 1fr); }
+    .hero h1 { font-size: 2.7rem; }
+  }
+
+  @media (max-width: 850px) {
+    .hero-grid { flex-direction: column; align-items: flex-start; gap: 40px; }
+    .adcard, .adcard-caption { margin-left: 0; }
+    .adcard-caption { text-align: left; }
+    .section-head h2 { font-size: 1.95rem; }
+    .budget { grid-template-columns: 1fr; }
+    .budget-figure { border-right: none; border-bottom: 1px solid var(--border-subtle); padding-right: 0; padding-bottom: 24px; }
+  }
+
+  @media (max-width: 768px) {
+    .hero h1 { font-size: 2.2rem; }
+    .benefits, .split { grid-template-columns: 1fr; }
+    .wrap { padding-inline: 20px; }
+  }
+
+  @media (max-width: 600px) {
+    .stats { grid-template-columns: 1fr; }
+    .buildgrid { grid-template-columns: 1fr; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .cta-btn { transition: none; }
+    .cta-btn:hover { transform: none; }
+  }
+
+  @media print {
+    .page { background: #ffffff; }
+    .hero, .buildstrip, .cta { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .section { padding: 34px 0; page-break-inside: avoid; }
+    .bcard, .panel, .budget { page-break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <header class="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow">Google Search Ads</p>
+        <h1>Get found while diners are still deciding</h1>
+        <p class="hero-lede">
+          Most people pick where to eat on Google Search or Google Maps — before they ever open a
+          delivery app. Search Ads put your restaurant in front of them at that exact moment, and
+          send them to your own ordering page instead of a marketplace.
+        </p>
+        <div class="hero-badge">
+          <span class="dot" aria-hidden="true"></span>
+          Built, published, and monitored by the Chowly team
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="adcard" role="img" aria-label="Example of a sponsored restaurant listing on Google Maps, showing a map pin and Order Online, Directions, and Call buttons">
+          <div class="adcard-map">
+            <div class="road h1"></div>
+            <div class="road h2"></div>
+            <div class="road v1"></div>
+            <div class="road v2"></div>
+            <div class="pin"></div>
+          </div>
+          <div class="adcard-body">
+            <span class="adcard-tag">Sponsored</span>
+            <p class="adcard-name">Your Restaurant</p>
+            <p class="adcard-meta">
+              <span class="adcard-stars" aria-hidden="true">★★★★★</span>
+              <span>4.6 (312)</span>
+              <span>·</span>
+              <span>Open until 9:00 PM</span>
+              <span>·</span>
+              <span>0.4 mi</span>
+            </p>
+            <div class="adcard-actions">
+              <span class="adcard-btn filled">Order Online</span>
+              <span class="adcard-btn">Directions</span>
+              <span class="adcard-btn">Call</span>
+            </div>
+          </div>
+        </div>
+        <p class="adcard-caption">
+          A search for “tacos near me” on a phone. The sponsored result sits above every other
+          nearby option — with your ordering link on it.
+        </p>
+      </div>
+    </div>
+  </header>
+
+  <section class="statband">
+    <div class="wrap stats">
+      <div class="stat">
+        <div class="stat-value">8 billion</div>
+        <p class="stat-label">“Food near me” searches on Google</p>
+      </div>
+      <div class="stat">
+        <div class="stat-value">40–80%</div>
+        <p class="stat-label">Of restaurant website traffic already comes from Google</p>
+      </div>
+      <div class="stat">
+        <div class="stat-value">~75%</div>
+        <p class="stat-label">Of your ad's views come from Google Maps, not the search page</p>
+      </div>
+      <div class="stat">
+        <div class="stat-value">15–30%</div>
+        <p class="stat-label">Marketplace commission avoided on every order that comes to you direct</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Why it works</p>
+        <h2>Four things your ads do for you</h2>
+        <p>Search Ads aren't awareness advertising. They reach people who are already looking for
+          food like yours, in your neighborhood, right now.</p>
+      </div>
+
+      <div class="benefits">
+        <article class="bcard">
+          <span class="kicker">Intent, not impressions</span>
+          <h3>You reach hungry people, not everyone</h3>
+          <p>
+            Your ad shows when someone searches a term that fits your food — “pizza near me,”
+            “best ramen downtown” — inside the area around your store. You're not paying to
+            interrupt anyone. You're paying to be the answer to a question they already asked.
+          </p>
+        </article>
+
+        <article class="bcard">
+          <span class="kicker">The map pack</span>
+          <h3>You win the top spot on Google Maps</h3>
+          <p>
+            When your Google Business Profile is linked to your ad account, your ad can appear as a
+            sponsored result inside Maps — with Order Online, Directions, and Call buttons attached.
+            That placement sits above every other nearby restaurant competing for the same search.
+          </p>
+        </article>
+
+        <article class="bcard">
+          <span class="kicker">Direct orders</span>
+          <h3>Traffic goes to your site, not a marketplace</h3>
+          <p>
+            Every ad points straight at your own online ordering page. The goal isn't to move
+            someone off DoorDash after they've opened it — it's to reach them first, so the order
+            never carries a 15–30% commission in the first place.
+          </p>
+        </article>
+
+        <article class="bcard">
+          <span class="kicker">Compounding value</span>
+          <h3>Your ad data makes your whole site rank better</h3>
+          <p>
+            The search terms your ads win tell us exactly how people in your neighborhood look for
+            food like yours. We feed that language back into your website copy, image tags, and
+            local SEO — so your ads improve what you get from Google for free, too.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="buildstrip">
+    <div class="wrap inner">
+      <h2>How your ads are built</h2>
+      <p class="sub">Every location gets its own campaign — never one generic ad spread across the brand.</p>
+      <div class="buildgrid">
+        <div class="bitem">
+          <h4>One campaign per location</h4>
+          <p>Its own ad, its own ordering link, its own performance you can read on its own.</p>
+        </div>
+        <div class="bitem">
+          <h4>Targeted to your trade area</h4>
+          <p>A radius around the store, specific ZIP codes, or your metro area — whichever fits how people actually travel to you.</p>
+        </div>
+        <div class="bitem">
+          <h4>Linked to your Business Profile</h4>
+          <p>This is what puts your ad on Maps and adds the Directions and Call buttons.</p>
+        </div>
+        <div class="bitem">
+          <h4>Always on, always learning</h4>
+          <p>Running continuously lets Google learn who's most likely to click. Headlines and descriptions are tested against each other automatically.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Who does what</p>
+        <h2>You set the budget. We do the rest.</h2>
+      </div>
+
+      <div class="split">
+        <div class="panel accent">
+          <span class="who">Chowly handles</span>
+          <h3>Building and running the campaigns</h3>
+          <ul class="checks">
+            <li>Setting up and verifying your Google Ads account, and linking your Business Profile</li>
+            <li>Writing and publishing the campaigns, keywords, headlines, and descriptions</li>
+            <li>Monitoring performance weekly and flagging anything that needs your attention</li>
+            <li>Updating campaigns at least monthly based on what the data and Google's recommendations show</li>
+            <li>Watching spend against what you expected to spend</li>
+            <li>Reporting results back to you on our regular calls</li>
+          </ul>
+        </div>
+
+        <div class="panel">
+          <span class="who">You control</span>
+          <h3>Spend and direction</h3>
+          <ul class="checks">
+            <li>Your daily budget — raise it, lower it, or pause at any time</li>
+            <li>Your own payment method, billed directly by Google (Chowly doesn't mark up or resell ad spend)</li>
+            <li>Any keywords or neighborhoods you know we should target</li>
+            <li>Promotions, limited-time offers, or catering pushes you want the ads to support</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-tight">
+    <div class="wrap">
+      <div class="budget">
+        <div class="budget-figure">
+          <div class="budget-amount">$5<span>per location, per day</span></div>
+          <p class="budget-note">
+            Our recommended starting point. It's not a rule — how many people click and then order
+            is what tells us whether to move it up or down.
+          </p>
+        </div>
+        <div>
+          <h3>What that buys, and how we'll measure it</h3>
+          <ul class="budget-list">
+            <li><strong>You only pay for clicks.</strong> Showing up in a search costs nothing. You're charged when someone actually taps your ad.</li>
+            <li><strong>Google won't overspend.</strong> Your daily budget is the ceiling, and you can change it any day.</li>
+            <li><strong>First read at 2–4 weeks.</strong> That's enough runtime to report on clicks, cost per click, and total spend, and to make the first real budget call.</li>
+            <li><strong>Steady beats bursts.</strong> Spreading budget over time gets you seen more than once, which is what moves a diner from noticing you to choosing you.</li>
+            <li><strong>Order-level revenue tracking is a separate step.</strong> The ads report clicks and cost by default. To tie specific online orders and dollar amounts back to an ad, we install Google conversion tracking on your site — ask us to set that up if you want revenue attribution.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="wrap">
+      <h2>Let's review your ads together</h2>
+      <p>
+        Bring us the neighborhoods, dayparts, or menu items you want to push, and we'll tune the
+        campaigns around them before the next reporting period.
+      </p>
+      <a class="cta-btn" href="#">Talk to your Customer Success Manager <span aria-hidden="true">→</span></a>
+    </div>
+  </section>
+
+  <p class="footnote wrap">
+    Prepared by Chowly Customer Success. Figures reflect Google search behavior and Chowly platform
+    defaults; individual results vary by market, cuisine, and budget.
+  </p>
+
+</div>
+</body>
+</html>
