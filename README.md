@@ -9,6 +9,7 @@ Public one-page sites and customer-facing collateral, served via GitHub Pages.
 | Path | Page | Use |
 |------|------|-----|
 | [`/google-search-ads/`](https://jessegorin.github.io/sites/google-search-ads/) | Google Search Ads — What They Do for Your Restaurant | QBR / onboarding one-pager for restaurant operators |
+| [`/app-store-connect-access/`](https://jessegorin.github.io/sites/app-store-connect-access/) | Giving Chowly Access to Your App Store Account | iOS mobile app onboarding — customer-side App Store Connect setup |
 
 ## How it works
 
