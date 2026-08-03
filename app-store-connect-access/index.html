@@ -586,6 +586,13 @@
 
   .handback .secure p { font-size: 14px; color: #cfdcee; line-height: 1.58; }
 
+  /* the handback panel is navy in both themes, so its inline code is set explicitly */
+  .handback code {
+    background: rgba(255,255,255,0.08);
+    border-color: rgba(255,255,255,0.16);
+    color: #e8f0fb;
+  }
+
   /* ---------- WHAT HAPPENS NEXT ---------- */
 
   .next {
@@ -776,7 +783,7 @@
                 <ul>
                   <li><strong>First name:</strong> <code>Platform</code></li>
                   <li><strong>Last name:</strong> <code>Chowly</code></li>
-                  <li><strong>Email:</strong> the Chowly address included in the email this guide came with</li>
+                  <li><strong>Email:</strong> the Chowly email address sent to you alongside this guide</li>
                   <li><strong>Role:</strong> <code>Admin</code></li>
                   <li><strong>Additional resources:</strong> check <em>Access to Cloud Managed Developer ID Certificate</em></li>
                 </ul>
@@ -786,8 +793,9 @@
             <div class="note">
               <p>
                 <strong>Use the exact address we sent you.</strong> Apple ties the invitation to
-                that address, so a typo or a different Chowly address means deleting the invite and
-                starting over. If you can't find it, just reply and ask — we'll resend it.
+                whatever you type here, so a typo means cancelling the invite and starting over.
+                Copy and paste it rather than retyping it. If you don't have it, ask your Chowly
+                contact before you go any further.
               </p>
             </div>
           </div>
@@ -926,10 +934,10 @@
       <div class="secure">
         <h4>How to send them</h4>
         <p>
-          Reply to the email this guide came with. Paste the three IDs into the message and attach
-          the <code>.p8</code> file. Keep it to that thread rather than forwarding it on elsewhere —
-          the <code>.p8</code> is the credential that lets software publish to your app, so the
-          fewer inboxes it lands in, the better.
+          Email all four to your Chowly contact — the three IDs in the body of the message, with the
+          <code>.p8</code> file attached. Keep your own copy of the file somewhere safe before you
+          send it; Apple won't let you download it again, and you'll want it if you ever change
+          providers.
         </p>
       </div>
     </div>
@@ -983,7 +991,7 @@
         Send a screenshot of where you are — most questions here are one reply away, and we'd much
         rather answer than have you guess at an Apple screen.
       </p>
-      <p class="cta-line">Reply to the email this guide came with.</p>
+      <p class="cta-line">Email your Chowly contact.</p>
     </div>
   </section>
 
