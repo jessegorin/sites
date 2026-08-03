@@ -586,6 +586,13 @@
 
   .handback .secure p { font-size: 14px; color: #cfdcee; line-height: 1.58; }
 
+  /* the handback panel is navy in both themes, so its inline code is set explicitly */
+  .handback code {
+    background: rgba(255,255,255,0.08);
+    border-color: rgba(255,255,255,0.16);
+    color: #e8f0fb;
+  }
+
   /* ---------- WHAT HAPPENS NEXT ---------- */
 
   .next {
@@ -789,7 +796,7 @@
                 <ul>
                   <li><strong>First name:</strong> <code>Platform</code></li>
                   <li><strong>Last name:</strong> <code>Chowly</code></li>
-                  <li><strong>Email:</strong> the address your Chowly contact gives you</li>
+                  <li><strong>Email:</strong> the Chowly email address sent to you alongside this guide</li>
                   <li><strong>Role:</strong> <code>Admin</code></li>
                   <li><strong>Additional resources:</strong> check <em>Access to Cloud Managed Developer ID Certificate</em></li>
                 </ul>
@@ -798,9 +805,10 @@
             </ol>
             <div class="note">
               <p>
-                <strong>Ask your Chowly contact for the exact email address to invite.</strong> The
-                invitation is tied to it, and using the wrong one means starting the invite over.
-                It's usually our platform team address or your named Technical Account Manager.
+                <strong>Use the exact address we sent you.</strong> Apple ties the invitation to
+                whatever you type here, so a typo means cancelling the invite and starting over.
+                Copy and paste it rather than retyping it. If you don't have it, ask your Chowly
+                contact before you go any further.
               </p>
             </div>
           </div>
@@ -937,12 +945,12 @@
       </div>
 
       <div class="secure">
-        <h4>Please don't email the .p8 file</h4>
+        <h4>How to send them</h4>
         <p>
-          That file is a private key — it's the credential that lets software publish to your app.
-          Ask your Chowly contact for the secure upload link or shared folder we use, and send it
-          there. Plain email and chat attachments sit in inboxes indefinitely and get forwarded
-          without anyone meaning to.
+          Email all four to your Chowly contact — the three IDs in the body of the message, with the
+          <code>.p8</code> file attached. Keep your own copy of the file somewhere safe before you
+          send it; Apple won't let you download it again, and you'll want it if you ever change
+          providers.
         </p>
       </div>
     </div>
