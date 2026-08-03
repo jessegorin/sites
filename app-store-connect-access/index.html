@@ -650,12 +650,20 @@
     border-bottom: 2px solid var(--yellow);
   }
 
-  .footnote {
-    padding: 26px 0 40px;
+  /* Selector must be `.page p.footnote`, not `.footnote`: `.page p { margin: 0 }`
+     is (0,1,1) and out-specifies any bare class, so a plain `.footnote` rule has
+     its auto margins zeroed and the block pins to the left edge of the page.
+     max-width is narrower than .wrap's 880px so there is slack to centre into,
+     and text-wrap keeps the lines near-equal rather than one full + one short. */
+  .page p.footnote {
+    max-width: 64ch;
+    margin-inline: auto;
+    padding: 26px 28px 40px;
     font-size: 12px;
     color: var(--text-subtle);
     line-height: 1.6;
-    text-align: right;
+    text-align: center;
+    text-wrap: balance;
   }
 
   /* ---------- RESPONSIVE ---------- */
